@@ -35,7 +35,6 @@
 						Margin="10"
 						Padding="10"
 						Clicked="StopWork" />
-
 			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>
