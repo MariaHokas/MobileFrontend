@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileFront.EmployeePage">
+    <ContentPage.Content>
+		<StackLayout BackgroundColor="#CBFFFA">
+			<Button Text="Load Employees" 
+					TextColor="#FFCCCB" 
+					FontSize="10"
+					FontFamily="Palatino Linotype"
+					BackgroundColor="#21B6A8" 
+					Margin="5"
+					Padding="5"
+					Clicked="LoadEmployees" />
+			<ListView VerticalOptions="CenterAndExpand"
+					HorizontalOptions="Center" 
+					x:Name="employeeList"
+					BackgroundColor="#CBFFFA"/>
+			<Image x:Name="employeeImage" />
+			<Button Text="Go To Work Assignments" 
+					TextColor="#FFCCCB" 
+					BackgroundColor="#21B6A8"  
+					FontSize="10"
+					Margin="5"
+					Clicked="ListWorkAssignments" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

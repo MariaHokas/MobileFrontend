@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileFront.WorkAssignmentPage">
+	<ContentPage.Content>
+		<StackLayout BackgroundColor="#FFCCCB">
+			<Button Text="Load Work Assignments" 
+					TextColor="#CBFFFA" 
+					FontSize="10"
+					FontFamily="Palatino Linotype"
+					BackgroundColor="#21B6A8" 
+					Margin="5"
+					Padding="5"
+					Clicked="LoadWorkAssignments"></Button>
+			<ListView x:Name="assignmentList"></ListView>
+			<StackLayout>
+				<Image Source="Ice.jpg" WidthRequest="150" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+				<Label Text="Latitude: "></Label>
+				<Label x:Name="latitudeLabel" Text="0.00"></Label>
+				<Label Text="Longitude:"></Label>
+				<Label x:Name="longitudeLabel" Text="0.00"></Label>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+				<Button Text="Start Work" 		
+						TextColor="#CBFFFA" 								
+						BackgroundColor="#21B6A8" 
+						Margin="10"	
+						Padding="10"
+						Clicked="StartWork" />
+				<Button Text="Stop Work" 		
+						TextColor="#CBFFFA" 										
+						BackgroundColor="#21B6A8" 
+						Margin="10"
+						Padding="10"
+						Clicked="StopWork" />
+
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
