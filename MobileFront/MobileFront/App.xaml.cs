@@ -9,7 +9,6 @@ namespace MobileFront
     {
         public App()
         {
-            InitializeComponent();
 
             MainPage = new NavigationPage(new EmployeePage());
         }

@@ -32,7 +32,7 @@ namespace MobileFront
                 try
                 {
                     HttpClient client = new HttpClient();
-                    client.BaseAddress = new Uri("http://192.168.10.1:45455/");
+                    client.BaseAddress = new Uri("http://192.168.100.12:45455/");
                     string json = await client.GetStringAsync("/api/employee?employeeName=" + employee);
                     byte[] imageBytes = JsonConvert.DeserializeObject<byte[]>(json);
 
@@ -52,7 +52,7 @@ namespace MobileFront
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://192.168.10.1:45455/");
+                client.BaseAddress = new Uri("http://192.168.100.12:45455/");
                 string json = await client.GetStringAsync("/api/employee");
                 string[] employees = JsonConvert.DeserializeObject<string[]>(json);
 

@@ -15,8 +15,8 @@ namespace MobileFront
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class WorkAssignmentPage : ContentPage
 	{
-		public WorkAssignmentPage ()
-		{
+        public WorkAssignmentPage()
+        {
             InitializeComponent();
 
             assignmentList.ItemsSource = new string[] { "" };
@@ -37,11 +37,10 @@ namespace MobileFront
 
         public async void LoadWorkAssignments(object sender, EventArgs e)
         {
-            // tämä sivu poikkeuksen hallinnan kanssa.
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://192.168.10.1:45455/");
+                client.BaseAddress = new Uri("http://192.168.100.12:45455/");
                 string json = await client.GetStringAsync("/api/workassignment");
                 string[] assignments = JsonConvert.DeserializeObject<string[]>(json);
 
@@ -53,7 +52,7 @@ namespace MobileFront
                 assignmentList.ItemsSource = new string[] { errorMessage };
             }
         }
-        //sama homma kun Employeesivulla kysymysmerkki että sovellus ei kaadu 
+
         public async void StartWork(object sender, EventArgs e)
         {
             string assignmentName = assignmentList.SelectedItem?.ToString();
@@ -72,7 +71,7 @@ namespace MobileFront
                     };
 
                     HttpClient client = new HttpClient();
-                    client.BaseAddress = new Uri("http://192.168.10.1:45455/");
+                    client.BaseAddress = new Uri("http://192.168.100.12:45455/");
                     string input = JsonConvert.SerializeObject(data);
                     StringContent content = new StringContent(input, Encoding.UTF8, "application/json");
 
@@ -115,7 +114,7 @@ namespace MobileFront
                     };
 
                     HttpClient client = new HttpClient();
-                    client.BaseAddress = new Uri("http://192.168.10.1:45455/");
+                    client.BaseAddress = new Uri("http://192.168.100.12:45455/");
                     string input = JsonConvert.SerializeObject(data);
                     StringContent content = new StringContent(input, Encoding.UTF8, "application/json");
 
